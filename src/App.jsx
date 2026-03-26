@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import "./App.css";
 
+
+const API_URL = import.meta.env.VITE_API_URL;
+
 function App() {
   const [cities, setCities] = useState([]);
   const [selectedCity, setSelectedCity] = useState(null);
@@ -15,7 +18,7 @@ function App() {
   const [loading, setLoading] = useState(false); // 🔥 NUEVO
 
   useEffect(() => {
-    fetch("http://localhost:3000/cities")
+    fetch(`${API_URL}/cities`)
       .then((res) => res.json())
       .then((data) => setCities(data));
   }, []);
@@ -62,7 +65,7 @@ function App() {
     try {
       setLoading(true); // 🔥 ACTIVA LOADING
 
-      await fetch("http://localhost:3000/bookings", {
+      await fetch(`${API_URL}/bookings`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
