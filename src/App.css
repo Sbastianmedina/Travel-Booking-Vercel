@@ -331,10 +331,10 @@ body {
   text-align: center;
   color: #aaa;
   font-size: 13px;
-  margin-top: 20px;   /* 👈 separa del contenido de arriba */
-  padding-top: 10px;  /* 
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.1); /* línea sutil */
 }
-
 /* WHATSAPP */
 .whatsapp {
   position: fixed;
@@ -638,5 +638,4 @@ h3 {
     margin: 30px 0;   /* 👈 evita que se monte */
     font-size: 1.8rem; /* 👈 se adapta al celular */
   }
-}
 }
