@@ -122,11 +122,10 @@ body {
 /* TITULO */
 .main-title {
   text-align: center;
-  margin:  80px; /* 👈 separa arriba y abajo */
-  font-size: 2.5rem;
+  margin: 40px 0; /* 👈 solo arriba y abajo */
+  font-size: 2.2rem;
   font-weight: 700;
   color: #1f2d3d;
-  position: relative;
 }
 
 /* GRID */
@@ -538,6 +537,8 @@ h3 {
   color: #000; /* 👈 texto negro */
 
   transition: all 0.9s ease;
+  width: 100%;            
+  box-sizing: border-box; 
 }
 /* ICONO DEL CALENDARIO */
 .reservation-form input[type="date"]::-webkit-calendar-picker-indicator {
@@ -627,5 +628,12 @@ h3 {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    margin: 30px 0;   /* 👈 evita que se monte */
+    font-size: 1.8rem; /* 👈 se adapta al celular */
   }
 }
