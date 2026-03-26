@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import "./App.css";
 
-
 const API_URL = import.meta.env.VITE_API_URL;
 
 function App() {
@@ -90,7 +89,6 @@ function App() {
       // MENSAJE
       setSuccessMessage("✅ Reserva realizada con éxito");
       setTimeout(() => setSuccessMessage(""), 3000);
-
     } catch (error) {
       setLoading(false); // 🔥 IMPORTANTE
 
@@ -117,7 +115,10 @@ function App() {
       {/* HERO */}
       <div id="inicio" className="hero">
         <video autoPlay loop muted className="hero-video">
-          <source src="https://res.cloudinary.com/dm2lrhilm/video/upload/v1773940878/plane_djgyap.mp4" type="video/mp4" />
+          <source
+            src="https://res.cloudinary.com/dm2lrhilm/video/upload/v1773940878/plane_djgyap.mp4"
+            type="video/mp4"
+          />
         </video>
         <div className="hero-overlay">
           <h1>ENCUENTRA TU PRÓXIMO DESTINO</h1>
@@ -176,12 +177,11 @@ function App() {
         <div className="cities-grid">
           {cities.map((city) => (
             <div key={city.id} className="city-card">
-              {city.image && <img src={city.image} alt={city.name} />}
+              {city.image && <img src={city.image} alt={city.name} 
+              loading="lazy"/>}
               <h2>{city.name}</h2>
               <p>${city.price.toLocaleString()}</p>
-              <button onClick={() => handleReserve(city)}>
-                Reservar
-              </button>
+              <button onClick={() => handleReserve(city)}>Reservar</button>
             </div>
           ))}
         </div>
@@ -258,13 +258,25 @@ function App() {
           <div className="footer-item">
             <h3>SÍGUENOS</h3>
             <div className="social-icons">
-              <a href="https://www.facebook.com/sebastianmedina07" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.facebook.com/sebastianmedina07"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaFacebookF />
               </a>
-              <a href="https://www.instagram.com/sbastianmedina.8" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.instagram.com/sbastianmedina.8"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaInstagram />
               </a>
-              <a href="https://www.tiktok.com/@sbastian.8" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.tiktok.com/@sbastian.8"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaTiktok />
               </a>
             </div>
