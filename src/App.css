@@ -331,6 +331,8 @@ body {
   text-align: center;
   color: #aaa;
   font-size: 13px;
+  margin-top: 20px;   /* 👈 separa del contenido de arriba */
+  padding-top: 10px;  /* 
 }
 
 /* WHATSAPP */
